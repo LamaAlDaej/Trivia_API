@@ -243,9 +243,8 @@ The Trivia API will return the below error types when requests fail:
 * Sample: `curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: application/json" -d '{"question":"What is the nearest planet to the sun?","answer":"Mercury","difficulty":"1","category":"1"}'`
 ```
 {
-  "error": 400,
-  "message": "Bad Request",
-  "success": false
+  "created": 36,
+  "success": true
 }
 ```
 
@@ -267,26 +266,46 @@ The Trivia API will return the below error types when requests fail:
     * Fiends questions based on a search term
     * Request Arguments: None
     * Returns: An object that contains a success boolean value, list of the result questions, number of total questions, and the ID of the current category.
-* Sample: `curl http://127.0.0.1:5000/questions/search -X POST -H "Content-Type: application/json" -d '{"searchType":"title"}'`
+* Sample: `curl http://127.0.0.1:5000/questions/search -X POST -H "Content-Type: application/json" -d "{\"searchTerm\":\"title\"}"`
 ```
 {
-  "error": 400,
-  "message": "Bad Request",
-  "success": false
+  "current_category": null,
+  "questions": [
+    {
+      "answer": "Maya Angelou",
+      "category": 4,
+      "difficulty": 2,
+      "id": 5,
+      "question": "Whose autobiography is entitled 'I Know Why the Caged Bird Sings'?"
+    },
+    {
+      "answer": "Edward Scissorhands",
+      "category": 5,
+      "difficulty": 3,
+      "id": 6,
+      "question": "What was the title of the 1990 fantasy directed by Tim Burton about a young man with multi-bladed appendages?"
+    }
+  ],
+  "success": true,
+  "total_questions": 2
 }
 ```
 
 ### POST '/quizzes'
 * General
-    * Plays a quiz with a specific category questions or all questions
+    * Plays a quiz for a specific category questions or all categories' questions
     * Request Arguments: None
     * Returns: An object that contains a success boolean value and the next question to be asked.
-* Sample: `curl http://127.0.0.1:5000/questions/search -X POST -H "Content-Type: application/json" -d '{"quiz_category":{"type":"Science","id":1},"previous_questions": []}'`
+* Sample: `curl http://127.0.0.1:5000/quizzes -X POST -H "content-type: application/json" -d "{\"quiz_category\":{\"type\":\"Science\",\"id\":1},\"previous_questions\":[]}"`
 ```
 {
-  "error": 400,
-  "message": "Bad Request",
-  "success": false
+  "question": {
+    "answer": "The Liver",
+    "category": 1,
+    "difficulty": 4,
+    "id": 20,
+    "question": "What is the heaviest organ in the human body?"
+  },
+  "success": true
 }
-curl: (3) [globbing] bad range specification in column 2
 ```
