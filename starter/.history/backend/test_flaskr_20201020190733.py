@@ -171,7 +171,7 @@ class TriviaTestCase(unittest.TestCase):
         # Check the success body is false
         self.assertEqual(data['success'], False)
         # Check the message body
-        self.assertEqual(data['message'], 'Not Processable')
+        self.assertEqual(data['message'], 'The request is unable to be processed.')
 
     # TEST (Successful Operation): POST /questions/search
     def test_search_questions(self):
@@ -201,7 +201,7 @@ class TriviaTestCase(unittest.TestCase):
         # Check the success body is false
         self.assertEqual(data['success'], False)
         # Check the message body
-        self.assertEqual(data['message'], 'Not Processable')
+        self.assertEqual(data['message'], 'The request is unable to be processed.')
 
     # TEST (Successful Operation): GET /categories/1/questions
     def test_get_questions_of_category(self):
@@ -233,7 +233,7 @@ class TriviaTestCase(unittest.TestCase):
         # Check the success body is false
         self.assertEqual(data['success'], False)
         # Check the message body
-        self.assertEqual(data['message'], 'Resource Not Found')
+        self.assertEqual(data['message'], 'The requested resource could not be found.')
 
     # TEST (Successful Operation): POST /quizzes
     def test_play_new_quiz(self):
@@ -259,7 +259,7 @@ class TriviaTestCase(unittest.TestCase):
         # Check the success body is false
         self.assertEqual(data['success'], False)
         # Check the message body
-        self.assertEqual(data['message'], 'Not Processable')
+        self.assertEqual(data['message'], 'The request is unable to be processed.')
 
 
 # Make the tests conveniently executable

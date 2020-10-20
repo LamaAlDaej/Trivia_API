@@ -361,7 +361,7 @@ def create_app(test_config=None):
     return jsonify({
         'success': False,
         'error': 405,
-        'message': 'Method Not Allowed'
+        'message': 'The request method is not supported for the requested resource.'
     }), 405
 
   # (To understand all the HTML status codes meanings I used the below references: 

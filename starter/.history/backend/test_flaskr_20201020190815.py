@@ -259,7 +259,7 @@ class TriviaTestCase(unittest.TestCase):
         # Check the success body is false
         self.assertEqual(data['success'], False)
         # Check the message body
-        self.assertEqual(data['message'], 'Not Processable')
+        self.assertEqual(data['message'], 'The request is unable to be processed.')
 
 
 # Make the tests conveniently executable
