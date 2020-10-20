@@ -83,9 +83,9 @@ The Trivia API will return the below error types when requests fail:
 ## Resource Endpoint Library
 ### GET '/categories'
 * Genreal
-** Fetches a dictionary of categories in which the keys are the ids and the value is the corresponding string of the category
-** Request Arguments: None
-** Returns: An object that contains an object with a single key, categories, that contains a object of id: category_string key:value pairs, and a success boolean value.
+**Fetches a dictionary of categories in which the keys are the ids and the value is the corresponding string of the category
+**Request Arguments: None
+**Returns: An object that contains an object with a single key, categories, that contains a object of id: category_string key:value pairs, and a success boolean value.
 * Sample: `curl http://127.0.0.1:5000/categories`
 
 ```
