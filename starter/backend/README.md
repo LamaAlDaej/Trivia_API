@@ -94,6 +94,7 @@ GET '/categories'
 - Fetches a dictionary of categories in which the keys are the ids and the value is the corresponding string of the category
 - Request Arguments: None
 - Returns: An object that contains a success boolean value and an object with a single key, categories, that contains a object of id: category_string key:value pairs. 
+```
 {"success": true,
 "categories": {'1' : "Science",
             '2' : "Art",
@@ -102,11 +103,13 @@ GET '/categories'
             '5' : "Entertainment",
             '6' : "Sports"}
 }
+```
 
 ### GET '/questions'
 - Retrieves all the questions and categories
 - Request Arguments: None
 - Returns: An object that contains a success boolean value, a list of the current page questions (10 questions per page), number of total questions, list of categories in key:value pairs, and the ID of the current category.
+```
 {'success': true,
 'questions' : {'id': 2, 'question': 'What movie earned Tom Hanks his third straight Oscar nomination, in 1996?', 'answer': 'Apollo 13', 'category': 5, 'difficulty': 4}, 
                 {'id': 4, 'question': 'What actor did author Anne Rice first denounce, then praise in the role of her beloved Lestat?', 'answer': 'Tom Cruise', 'category': 5, 'difficulty': 4}, {'id': 5, 'question': "Whose autobiography is entitled 'I Know Why the Caged Bird Sings'?", 'answer': 'Maya Angelou', 'category': 4, 'difficulty': 2},
@@ -118,48 +121,58 @@ GET '/categories'
                 '5' : "Entertainment",
                 '6' : "Sports"},
 'current_category' : None}
+```
 
 ### DELETE '/questions/<int:question_id>'
 - Removes a question using its ID
 - Request Arguments: The question's ID (question_id)
 - Returns: An object than contains a success boolean value and the ID of the deleted question.
+```
 {'success': true,
 'deleted': 5}
+```
 
 ### POST '/questions'
 - Creates a new question
 - Request Arguments: None
 - Returns: An object that contains a success boolean value and the ID of the created question.
+```
 {'success': true,
 'created': 25}
+```
 
 ### POST '/questions/search'
 - Fiends questions based on a search term
 - Request Arguments: None
 - Returns: An object that contains a success boolean value, list of the result questions, number of total questions, and the ID of the current category.
+```
 {'success': true,
 'questions' : {'id': 2, 'question': 'What movie earned Tom Hanks his third straight Oscar nomination, in 1996?', 'answer': 'Apollo 13', 'category': 5, 'difficulty': 4}, 
                 {'id': 4, 'question': 'What actor did author Anne Rice first denounce, then praise in the role of her beloved Lestat?', 'answer': 'Tom Cruise', 'category': 5, 'difficulty': 4}, {'id': 5, 'question': "Whose autobiography is entitled 'I Know Why the Caged Bird Sings'?", 'answer': 'Maya Angelou', 'category': 4, 'difficulty': 2},
 'total_questions' : 24,
 'current_category' : None}
+```
 
 ### GET '/categories/<int:category_id>/questions'
 - Retrieves all the questions for a specific category
 - Request Arguments: Category's ID (category_id)
 - Returns: An object that contains a success boolean value, list of the specified category's questions, number of total questions, and the ID of the current category.
+```
 {'success': true,
 'questions' : {'id': 20, 'question': ' What is the heaviest organ in the human body?', 'answer': 'The Liver', 'category': 1, 'difficulty': 4}, 
                 {'id': 21, 'question': 'Who discovered penicillin?', 'answer': 'Alexander Fleming', 'category': 1, 'difficulty': 3}, {'id':22, 'question': "Hematology is a branch of medicine involving the study of what??", 'answer': 'Blood', 'category': 1, 'difficulty': 4},
 'total_questions' : 3,
 'current_category' : 1}
+```
 
 ### POST '/quizzes'
 - Plays a quiz with a specific category questions or all questions
 - Request Arguments: None
 - Returns: An object that contains a success boolean value and the next question to be asked.
+```
 {'success': true,
 'question' : {'id': 20, 'question': ' What is the heaviest organ in the human body?', 'answer': 'The Liver', 'category': 1, 'difficulty': 4}}
-
+```
 
 ## Testing
 To run the tests, run
